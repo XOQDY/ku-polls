@@ -3,4 +3,5 @@ li a {
 }
 body {
     background: black url("images/background.gif") no-repeat;
+    background-size: 100% 100%;
 }
