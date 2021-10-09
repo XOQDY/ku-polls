@@ -1,9 +1,15 @@
-<h1>{{ question.question_text }}</h1>
+<body style="background-color: #202124" xmlns="http://www.w3.org/1999/html">
+<h1><p style="color: white"> {{ question.question_text }}</p></h1>
 
 <ul>
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <p><li style="color: white" >{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li></p>
 {% endfor %}
 </ul>
-
+<form>
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</form>
+<div>
+    <a href="{% url 'polls:index' %}"><button>Back to List of Polls</button></a>
+</div>
+</body>

@@ -1,5 +1,6 @@
 li a {
     color: white;
+    font-family: "Lulu Med", sans-serif;
 }
 body {
     background: black url("images/background.gif") no-repeat;
