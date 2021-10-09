@@ -1,6 +1,13 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" xmlns="">
+{% if messages %}
+    <ul class="messages">
+        {% for msg in messages %}
+            <h1><p style="color:#FF0000">{{ msg }}</p></h1>
+        {% endfor %}
+    </ul>
+{% endif %}
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}

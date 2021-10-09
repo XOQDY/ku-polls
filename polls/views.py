@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.contrib import messages
 
 from .models import Choice, Question
 
@@ -50,3 +51,13 @@ def vote(request, question_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse('polls:results', args=(question_id, )))
+
+
+def detail(request, question_id=None):
+    question = get_object_or_404(Question, pk=question_id)
+    if not question.can_vote():
+        messages.error(request, f"Yo man you can't vote on \"{question.question_text}\" poll anymore its to late. "
+                                f"\U0001F612")
+        return HttpResponseRedirect(reverse('polls:index'))
+    else:
+        return render(request, 'polls/detail.html', {'question': question, })
