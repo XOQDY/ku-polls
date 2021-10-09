@@ -20,10 +20,12 @@ class Question(models.Model):
     was_published_recently.short_description = 'Published recently?'
 
     def is_published(self):
+        """Return True if current date is on or after question’s publication date"""
         now = timezone.now()
         return now >= self.pub_date
 
     def can_vote(self):
+        """Return True if voting is currently allowed for this question"""
         now = timezone.now()
         return self.end_date >= now >= self.pub_date
 
