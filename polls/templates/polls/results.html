@@ -1,11 +1,25 @@
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <body style="background-color: #202124" xmlns="http://www.w3.org/1999/html">
 <h1><p style="color: white"> {{ question.question_text }}</p></h1>
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <p><li style="color: white" >{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li></p>
-{% endfor %}
-</ul>
+
+<div class="span6">
+    {% for choice in question.choice_set.all %}
+  <strong><p style="color: white"> {{ choice.choice_text }}</p></strong><span class="pull-right"><p style="color: white">{{ choice.votes }}</p></span>
+  <div class="progress progress-danger active">
+      <div class="bar" style="width: {{ choice.votes }}%;"></div>
+  </div>
+    {% endfor %}
+</div>
+
+<!--{% for choice in question.choice_set.all %}-->
+<!--    <div>-->
+<!--    <span><p><li style="color: white" >{{ choice.choice_text }} &#45;&#45; {{ choice.votes }} vote{{ choice.votes|pluralize }}</li></p></span>-->
+<!--    </div>-->
+<!--{% endfor %}-->
+
 <form>
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 </form>
