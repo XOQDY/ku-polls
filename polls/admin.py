@@ -1,14 +1,19 @@
+"""Template for admin user."""
 from django.contrib import admin
 
 from .models import Choice, Question
 
 
 class ChoiceInline(admin.TabularInline):
+    """Show choice that admin user can create and show extra of empty choice that not create yet."""
+
     model = Choice
     extra = 3
 
 
 class QuestionAdmin(admin.ModelAdmin):
+    """Page question for admin."""
+
     fieldsets = [
         (None,               {'fields': ['question_text']}),
         ('Date information', {'fields': ['pub_date', 'end_date'], 'classes': ['collapse']}),
