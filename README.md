@@ -7,9 +7,9 @@ A web application for conducting polls at Kasetsart University
 ## Project Documents 
 
 1. [Wiki Home](../../wiki/Home)  
-2. [Vision statement](../../wiki/Vision%20Statement)
+2. [Vision statement](../../wiki/Vision-Statement)
 3. [Requirements](../../wiki/Requirements)
 
 ## Iteration Plan
-* [Iteration1 Plan](../../wiki/Iteration%201%20Plan)
-* [Iteration2 Plan](../../wiki/Iteration%202%20Plan)
+* [Iteration1 Plan](../../wiki/Iteration-1-Plan)
+* [Iteration2 Plan](../../wiki/Iteration-2-Plan)
