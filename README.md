@@ -1,5 +1,5 @@
-[![Build Status](https://app.travis-ci.com/XOQDY/ku-polls.svg?branch=iteration2)](https://app.travis-ci.com/XOQDY/ku-polls)
-[![codecov](https://codecov.io/gh/XOQDY/ku-polls/branch/iteration2/graph/badge.svg?token=6AXXHU9KBP)](https://codecov.io/gh/XOQDY/ku-polls)
+[![Build Status](https://app.travis-ci.com/XOQDY/ku-polls.svg?branch=main)](https://app.travis-ci.com/XOQDY/ku-polls)
+[![codecov](https://codecov.io/gh/XOQDY/ku-polls/branch/main/graph/badge.svg?token=6AXXHU9KBP)](https://codecov.io/gh/XOQDY/ku-polls)
 # ku-polls
 
 A web application for conducting polls at Kasetsart University
