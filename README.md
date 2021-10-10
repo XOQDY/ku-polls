@@ -1,10 +1,15 @@
-[![Build Status](https://app.travis-ci.com/XOQDY/ku-polls.svg?branch=main)](https://app.travis-ci.com/github/XOQDY/ku-polls)
+[![Build Status](https://app.travis-ci.com/XOQDY/ku-polls.svg?branch=iteration2)](https://app.travis-ci.com/XOQDY/ku-polls)
+[![codecov](https://codecov.io/gh/XOQDY/ku-polls/branch/iteration2/graph/badge.svg?token=6AXXHU9KBP)](https://codecov.io/gh/XOQDY/ku-polls)
 # ku-polls
 
 A web application for conducting polls at Kasetsart University
 
-## Contents  
+## Project Documents 
 
 1. [Wiki Home](../../wiki/Home)  
 2. [Vision statement](../../wiki/Vision%20Statement)
 3. [Requirements](../../wiki/Requirements)
+
+## Iteration Plan
+* [Iteration1 Plan](../../wiki/Iteration%201%20Plan)
+* [Iteration2 Plan](../../wiki/Iteration%202%20Plan)
