@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import Choice, Question
+from .models import Choice, Question, Vote
 
 
 class IndexView(generic.ListView):
@@ -53,11 +53,16 @@ def vote(request, question_id):
             'error_message': "Bro you didn't select any choice \U0001F624.",
         })
     else:
-        selected_choice.votes += 1
-        selected_choice.save()
+        if question.vote_set.filter(user=request.user).exists():
+            vote = question.vote_set.get(user=request.user)
+            vote.choice = selected_choice
+            vote.save()
+        else:
+            selected_choice.vote_set.create(user=request.user, question=question)
         return HttpResponseRedirect(reverse('polls:results', args=(question_id, )))
 
 
+@login_required(login_url='/accounts/login/')
 def detail(request, question_id=None):
     """Detail view but when polls aren't available redirect user to index page."""
     question = get_object_or_404(Question, pk=question_id)
